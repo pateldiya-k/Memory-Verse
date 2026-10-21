@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MemoryVerse — Your Life, Your Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <p class="brand">MemoryVerse</p>
+        <div class="user">
+          <span id="userName"></span>
+          <button class="btn small" id="logoutBtn">Log out</button>
+        </div>
+      </div>
+      <h1>Your Life,<br>Your Story</h1>
+      <p class="lede">Write down the moments you never want to lose. Everything is saved in your own database and arranged on a timeline.</p>
+      <div class="hero-row">
+        <button class="btn primary" id="newBtn">Write a memory</button>
+        <p class="stats" id="stats" aria-live="polite"></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="toolbar" aria-label="Find memories">
+      <input type="search" id="search" placeholder="Search titles, stories, categories" aria-label="Search memories">
+      <select id="moodFilter" aria-label="Filter by mood">
+        <option value="">All moods</option>
+      </select>
+      <label class="check"><input type="checkbox" id="favOnly"> Favorites only</label>
+    </section>
+
+    <section id="timeline" class="timeline" aria-live="polite"></section>
+  </main>
+
+  <dialog id="dialog">
+    <form id="form" method="dialog" novalidate>
+      <h2 id="dialogTitle">Write a memory</h2>
+
+      <label>Title
+        <input name="title" maxlength="120" required placeholder="e.g. Rain on the terrace">
+      </label>
+
+      <label>What happened?
+        <textarea name="story" rows="5" maxlength="5000" required placeholder="Write it the way you'd tell a friend"></textarea>
+      </label>
+
+      <div class="grid2">
+        <label>Date
+          <input type="date" name="memoryDate" required>
+        </label>
+        <label>Mood
+          <select name="mood" id="moodSelect"></select>
+        </label>
+      </div>
+
+      <label>Category <span class="hint">(optional)</span>
+        <input name="category" maxlength="40" placeholder="Travel, Family, Career…">
+      </label>
+
+      <label>Photo <span class="hint">(optional, up to 5 MB)</span>
+        <input type="file" id="photo" accept="image/*">
+      </label>
+      <img id="preview" alt="Selected photo preview" hidden>
+
+      <p class="error" id="formError" role="alert"></p>
+
+      <div class="actions">
+        <button type="button" class="btn ghost" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn primary" id="saveBtn">Save memory</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

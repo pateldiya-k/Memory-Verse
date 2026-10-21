@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account — MemoryVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-page">
+    <aside class="auth-side">
+      <p class="brand">MemoryVerse</p>
+      <div>
+        <h1>Start your<br>story</h1>
+        <p class="lede">Create a free account and keep every moment safe in your own private timeline.</p>
+      </div>
+    </aside>
+
+    <main class="auth-main">
+      <form class="auth-card" id="authForm" data-mode="register" novalidate>
+        <h2>Create account</h2>
+
+        <label>Full name
+          <input name="name" maxlength="50" autocomplete="name" required placeholder="Your name">
+        </label>
+
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+        </label>
+
+        <label>Password <span class="hint">(at least 6 characters)</span>
+          <input type="password" name="password" autocomplete="new-password" required placeholder="Choose a password">
+        </label>
+
+        <label>Confirm password
+          <input type="password" name="confirm" autocomplete="new-password" required placeholder="Type it again">
+        </label>
+
+        <label class="check"><input type="checkbox" id="showPw"> Show passwords</label>
+
+        <p class="error" id="formError" role="alert"></p>
+
+        <button type="submit" class="btn primary solid" id="submitBtn">Create account</button>
+        <p class="switch">Already have an account? <a href="login.html">Log in</a></p>
+      </form>
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

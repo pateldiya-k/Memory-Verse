@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in — MemoryVerse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-page">
+    <aside class="auth-side">
+      <p class="brand">MemoryVerse</p>
+      <div>
+        <h1>Your Life,<br>Your Story</h1>
+        <p class="lede">Welcome back. Your memories are right where you left them.</p>
+      </div>
+    </aside>
+
+    <main class="auth-main">
+      <form class="auth-card" id="authForm" data-mode="login" novalidate>
+        <h2>Log in</h2>
+
+        <label>Email
+          <input type="email" name="email" autocomplete="email" required placeholder="you@example.com">
+        </label>
+
+        <label>Password
+          <input type="password" name="password" autocomplete="current-password" required placeholder="Your password">
+        </label>
+
+        <label class="check"><input type="checkbox" id="showPw"> Show password</label>
+
+        <p class="error" id="formError" role="alert"></p>
+
+        <button type="submit" class="btn primary solid" id="submitBtn">Log in</button>
+        <p class="switch">New here? <a href="register.html">Create an account</a></p>
+      </form>
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>
